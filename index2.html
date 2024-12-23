@@ -4,40 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container .item{
+            background-color: aquamarine;
+        }
+        .main-container >.item{
+            background-color: blueviolet;
+            padding: 10px;
+        }
+        .button{
+            background-color: rgb(43, 226, 98);
+            padding: 10px;
+            border: 0;   
+        }
+        .button.active {
+            background-color: red;
+        }
+        .button.danger {
+            background-color: rgb(17, 0, 255);
+        }
+        .item1 + .item2 {
+            background-color: burlywood;
+        }
+        input[type=text]{
+            background-color: brown;
+            height: 10px;
+            border: 1px solid gold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Register form</h1>
-    ชื่อ <input type="text">
-    นามสกุล <input type="text">
-    อายุ <input type="number"> min="0" max="100">
-    <div>
-        เพศ
-        <div>
-        <input name="gender" type="radio"> ชาย
+    <!--1.item  เป็นลูกของ container-->
+    <div  class="container">
+        Container
+        <div class="item">
+            Item
+        </div>
     </div>
-    <div>
-        <input name="gender" type="radio"> หญิง
+    <div class="main-container">
+        Container
+        <div class="item">
+            Item
+       
+        <div class="item">
+            Item2
+        </div>
+        <div class="item">
+            Item3
+        </div>
+      </div>
     </div>
-    <div>
-        <input name="gender" type="radio"> อื่นๆ
-    </div>
-    <div>
-        งานอดิเรก
-        <div>
-        <input name="hobby" type="checkbox"> อ่านหนังสือ
-    </div>
-    <div>
-        <input name="hobby" type="checkbox"> เล่นเกม
-    </div>
-    <div>
-        <input name="hobby" type="checkbox"> ดูหนัง
-    </div>
-</div>
-</div>
-  <div>
-    คำอธิบาย
-    <textarea></textarea>
-  </div>
-  <button>ส่งข้อมูล</button>
+    <button class="button">ปุ่ม</button>
+    <button class="button active">ปุ่ม</button>
+    <button class="button danger">ปุ่ม</button>
+    <!--4.เพื่อนกัน (adjacent)-->
+    <div class="item1">Item 1</div>
+    <div class="item2">Item 2</div>
+    <!---5. attribute selector-->
+    <input type="text" name="username">
+    <input type="text" name="name">
+    <input type="text" name="email">
 </body>
 </html>
