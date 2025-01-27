@@ -6,12 +6,35 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="radio" name="gender" value="ชาย"> ชาย
-    <input type="radio" name="gender" value="หญิง"> หญิง
-    <input type="radio" name="gender" value="อื่นๆ"> อื่นๆ
+    <div >
+        <h2>สิ่งที่สนใจ</h2>
+        <div id="content">
 
+        </div> 
+    </div>
+    <input type="checkbox" name="interest" value="กีฬา">กีฬา
+    <input type="checkbox" name="interest" value="ดนตรี">ดนตรี
+    <input type="checkbox" name="interest" value="อาหาร">อาหาร
+    <input type="checkbox" name="interest" value="เทคโนโลยี">เทคโนโลยี
+    <button onclick="SummitInterest()">แสดงสิ่งที่สนใจ</button>
     <script>
-    
+        function SummitInterest(){
+            //เลือก chackbox ทั้งหมด
+            let interestDOM = document.querySelectorAll('input[name="interest"]');
+            let contentHTML = '<ul>'; 
+            //เอาค่า value ออกมาเฉพาะที่เลือกใส่ไว้ที่ array
+            for(let i = 0; i < interestDOM.length; i++){
+                if(interestDOM[i].checked){
+                   contentHTML += '<li>' + interestDOM[i].value + '</li>';
+                }
+            }
+            //วนค่าที่ดลือกใส่ html กลับไป
+            contentHTML += '</ul>';
+            console.log(contentHTML);
+            //ใส่html ใน content
+            let contentDOM = document.getElementById('content');
+            contentDOM.innerHTML = contentHTML;
+        }
     </script>
 </body>
 </html>
