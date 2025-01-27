@@ -1,0 +1,5 @@
+{
+    "problems.autoReveal": true,
+    "problems.decorations.enabled": true,
+    "workbench.localHistory.enabled": false
+}
