@@ -1,0 +1,10 @@
+docker-v เช็คเวอชั่น
+docker ps เช็คคำสั่ง
+docker ps --all or         docker ps -a
+docker rm ลบ
+docker run -p 80:80 nginx คือ run contener
+ls
+pwd
+cd
+cd..กลับ
+cat ตามชื่อไฟล์
