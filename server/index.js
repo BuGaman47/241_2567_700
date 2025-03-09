@@ -160,6 +160,7 @@ app.delete('/users/:id', async (req, res) => {
     users.splice(selectedIndex, 1);
     res.json({
         message: 'Delete user successfully',
+    
         indexDeleted: selectedIndex
     })
  })
