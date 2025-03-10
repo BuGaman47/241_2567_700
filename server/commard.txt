@@ -8,3 +8,20 @@ pwd
 cd
 cd..กลับ
 cat ตามชื่อไฟล์
+
+docker run -p 80:80 nginx // run nainx on port 80
+docker ps --all // list all containers
+docker rm <containers_id> // remove containers
+docker run -d -p 80:80 nginx
+docker exec -it e03d2605b1cd=(containers_id) bash
+ls // list files
+pwd // print working directory
+cd // change directoryc
+cat // print file content
+cd .. // go backcd
+exit // exit containers
+docker stop <containers_id> // stop containers
+docker system prune  // remove all stopped containers
+docker-compose down
+npx nodemon node index.js
+npm i body-parser // install body-parser
