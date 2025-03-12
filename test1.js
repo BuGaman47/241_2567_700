@@ -11,7 +11,7 @@ let number = 14
 let student ={names : "ku"}
 let score = [ 65,25,70,23]
 console.log(firstname,number,c,student.names,score[1])
-*/
+
 let scores =[10,20,30,40,50,60,70,80,90,100]
 let newScortes = []
 let students =[
@@ -40,3 +40,5 @@ let student = students.find((s) =>{
     })
 console.log(newScore)
 console.log(student)
+    )
+*/
