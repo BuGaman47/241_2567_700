@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +11,22 @@
 </head>
 
 <body>
-    <a href="user.html">Go to User management</a>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+    <a href="user.html">User management</a>
     <div class="container">
         <div class="header">
             Register form
         </div>
+        
+        <div class="flex form-input">
+            <div class="header-form">User ID</div>
+            <input class="form" name="id" type="number">
+        </div>
+
 
         <div class="flex form-input">
             <div class="header-form">ชื่อ</div>
@@ -29,9 +42,9 @@
             <div class="header-form">อายุ</div>
             <input class="form" name="age" type="number" min="0" max="100">
         </div>
-
+   
         <div class="flex gender form-input">
-            <div class="header-form">เพศ</div>
+            <div class="gender-form">เพศ</div>
             <div>
                 <div>
                     <input name="gender" type="radio" value="ชาย">ชาย
@@ -65,12 +78,13 @@
 
         <div id = message class="message"></div>
 
-        <div class="center">
+        <div class="submit-v">
             <button onclick="submitData()" class="button">ส่งข้อมูล</button> 
         </div>
-
+    
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="index.js"></script>
+</form>
 </body>
 </html>

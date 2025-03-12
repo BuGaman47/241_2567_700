@@ -17,6 +17,7 @@ window.onload = async () => {
             const user = response.data;
             
             //2. นำข้อมูล user ที่ดึงมา ใส่ใน input ที่มี
+            let userDOM = document.getElementById("input[name=u")
             let firstNameDOM = document.querySelector("input[name=firstname]")
             let lastNameDOM = document.querySelector("input[name=lastname]")
             let ageDOM = document.querySelector("input[name=age]")
@@ -71,6 +72,7 @@ const validateData = (userData) => {
 };
 
 const submitData = async () => {
+     
     let firstNameDOM = document.querySelector("input[name=firstname]");
     let lastNameDOM = document.querySelector("input[name=lastname]");
     let ageDOM = document.querySelector("input[name=age]");
@@ -91,6 +93,7 @@ const submitData = async () => {
 
 
     let userData = {
+        id: selectedID || undefined,
         firstName: firstNameDOM.value,
         lastName: lastNameDOM.value,
         age: ageDOM.value,
@@ -100,18 +103,6 @@ const submitData = async () => {
     }
 
     console.log('submitData', userData);
-
-    /*
-        const errors = validateData(userData)
-        if (errors.length > 0) { 
-            //มี error
-            throw {
-                message : "กรุณากรอกข้อมูลให้ครบถ้วน",
-                errors: errors
-            } 
-
-        }
-    */  
 
         let message = 'บันทึกข้อมูลเรียบร้อย'
         if (mode == 'CREATE') {
