@@ -6,36 +6,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register form</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="User-MG">
+        <a href="user.html">User management</a>
+    </div>
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
     <form>
-    <a href="user.html">User management</a>
+    
     <div class="container">
         <div class="header">
             Register form
         </div>
-        
-        <div class="flex form-input">
-            <div class="header-form">User ID</div>
-            <input class="form" name="id" type="number">
-        </div>
-
 
         <div class="flex form-input">
-            <div class="header-form">ชื่อ</div>
-            <input class="form" name="firstname" type="text">
+            <div class="header-form">Firstname</div>
+            <input class="form-name" name="firstname" type="text" placeholder="firstname">
         </div>
 
         <div class="flex form-input">
             <div class="header-form">นามสกุล</div>
-            <input class="form" name="lastname" type="text">
+            <input class="form-name" name="lastname" type="text">
         </div>
 
         <div class="flex form-input">
@@ -78,8 +75,8 @@
 
         <div id = message class="message"></div>
 
-        <div class="submit-v">
-            <button onclick="submitData()" class="button">ส่งข้อมูล</button> 
+        <div class="submit">
+            <button onclick="submitData()" class="button">Submit</button> 
         </div>
     
     </div>

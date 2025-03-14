@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Kanit';
-    src: url('./Kanit/Kanit-Regular.ttf');
+    src: url('./Kanit/CounterStreamDemoRegular.ttf');
 }
 
 body {
-    font-family: 'Kanit';
+    font-family:;
     background-color: #080710;
     color: #fff;
     
@@ -45,21 +45,31 @@ body {
     height: 530px;
     width: 400px;
     max-width: 800px;
-   
-    padding: 0px;
+    padding: auto;
+}
+.form-input{
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #
+
+}
+.User-MG{
     
-    
+    background-color: #ffff;
+    backdrop-filter: blur(10px);
+    position: absolute;
 }
 form{
     height: 520px;
     width: 400px;
-    background-color: rgba(255,255,255,0.13);
+    background-color: rgba(255, 255, 255, 0.29);
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
     border-radius: 20px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(100px);
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
@@ -75,8 +85,6 @@ form{
 }
 .header-form {
     width: 100px;
-    background-color:rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
 
 }
 
@@ -91,6 +99,7 @@ form{
 
 input.form,
 textarea {
+   
     border: 1px solid #ccc;
     width: 100%;
 }
@@ -100,10 +109,15 @@ textarea {
     
 }
 .button {
-    background-color: #ccc;
+    
+    background-color: lightblue;
     border: 0;
     width: 100%;
     height: 40px;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: lightgreen;
 }
 .message {
     margin-bottom: 10px;
@@ -121,7 +135,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
     .flex {
-        flex-direction: column;
+        flex-direction:;
     }
     .header{
         font-size: 24px;
