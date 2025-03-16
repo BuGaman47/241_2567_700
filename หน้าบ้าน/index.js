@@ -17,7 +17,7 @@ window.onload = async () => {
             const user = response.data;
             
             //2. นำข้อมูล user ที่ดึงมา ใส่ใน input ที่มี
-            let userDOM = document.getElementById("input[name=u")
+
             let firstNameDOM = document.querySelector("input[name=firstname]")
             let lastNameDOM = document.querySelector("input[name=lastname]")
             let ageDOM = document.querySelector("input[name=age]")
@@ -68,7 +68,12 @@ const validateData = (userData) => {
     if (!userData.interest) {
         errors.push('กรุณาเลือกงานอดิเรก');
     }
+    if (!userData.description) {
+        errors.push('กรุณากรอกคำอธิบาย');
+    }
+
     return errors;
+    
 };
 
 const submitData = async () => {
@@ -90,10 +95,7 @@ const submitData = async () => {
             interest += ', '
         }
     }
-
-
     let userData = {
-        id: selectedID || undefined,
         firstName: firstNameDOM.value,
         lastName: lastNameDOM.value,
         age: ageDOM.value,
@@ -146,4 +148,4 @@ const submitData = async () => {
         messageDOM.innerHTML = htmlData;
         messageDOM.className = 'message danger';
     }
-}
+};

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,19 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="User-MG">
-        <a href="user.html">User management</a>
-    </div>
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
     <form>
-    
     <div class="container">
         <div class="header">
             Register form
@@ -27,61 +22,71 @@
 
         <div class="flex form-input">
             <div class="header-form">Firstname</div>
-            <input class="form-name" name="firstname" type="text" placeholder="firstname">
+            <input class="form-name" name="firstname" type="text" placeholder="Enter firstname">
         </div>
 
         <div class="flex form-input">
-            <div class="header-form">นามสกุล</div>
-            <input class="form-name" name="lastname" type="text">
+            <div class="header-form">Lastname</div>
+            <input class="form-name" name="lastname" type="text" placeholder=" Enter lastname">
         </div>
 
         <div class="flex form-input">
-            <div class="header-form">อายุ</div>
-            <input class="form" name="age" type="number" min="0" max="100">
+            <div class="header-form">Age</div>
+            <input class="form-age" name="age" type="number" min="0" max="100" placeholder="  Age">
         </div>
    
         <div class="flex gender form-input">
-            <div class="gender-form">เพศ</div>
+            <div class="gender-form">Gender</div>
             <div>
                 <div>
-                    <input name="gender" type="radio" value="ชาย">ชาย
+                    <input name="gender" type="radio" value="ชาย">Male 
                 </div>
                 <div>
-                    <input name="gender" type="radio" value="หญิง">หญิง
+                    <input name="gender" type="radio" value="หญิง">female
                 </div>
                 <div>
-                    <input name="gender" type="radio" value="อื่นๆ">อื่นๆ
+                    <input name="gender" type="radio" value="ไม่ระบุ">Not Specified
                 </div>
             </div>
         </div>
 
         <div class="form-input">
-            งานอดิเรก
+            Hobby
             <div>
-                <input name="interest" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ
+                <input name="interest" type="checkbox" value="อ่านหนังสือ"> Read a book
             </div>
             <div>
-                <input name="interest" type="checkbox" value="ดูหนัง"> ดูหนัง
+                <input name="interest" type="checkbox" value="ดูหนัง"> Watch a movie
             </div>
             <div>
-                <input name="interest" type="checkbox" value="ฟังเพลง"> ฟังเพลง
+                <input name="interest" type="checkbox" value="ฟังเพลง"> Listen to music
             </div>
         </div>
 
         <div class="form-input">
-            คำอธิบาย
+            Descriptions
             <textarea name="description"></textarea>
         </div>
 
         <div id = message class="message"></div>
 
-        <div class="submit">
-            <button onclick="submitData()" class="button">Submit</button> 
-        </div>
+        
+        <button type="button" onclick="submitData()" class="button">Submit</button>
     
+
+        <div class="position_center">
+            
+            <div class="User-MG " >
+                <button>
+                 <a href="user.html">User management</a> </button>
+
+            </div>
+        </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="index.js"></script>
 </form>
+</div>
 </body>
 </html>

@@ -19,6 +19,10 @@ const loadData = async () => {
                     <td>${user.id}</td>
                     <td>${user.firstname}</td>
                     <td>${user.lastname}</td>
+                    <td>${user.age}</td>
+                    <td>${user.gender}</td>
+                    <td>${user.interests}</td>
+                    <td>${user.description}</td>
                     <td>
                         <a href="index1.html?id=${user.id}">
                             <button>Edit</button>
