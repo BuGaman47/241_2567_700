@@ -135,17 +135,16 @@ const submitData = async () => {
         }
 
        
-        let htmlData = '<div>'; 
-        htmlData += '<div>' + error.message + '</div>';
+        let htmlData = '<div>';
+        htmlData += `<div> ${error.message} </div>`
         htmlData += '<ul>';
-        
         for (let i = 0; i < error.errors.length; i++) {
-            htmlData += '<li>' + error.errors[i] + '</li>';
+            htmlData += `<li> ${error.errors[i]} </li>`
         }
         htmlData += '</ul>';
         htmlData += '</div>';
 
         messageDOM.innerHTML = htmlData;
-        messageDOM.className = 'message danger';
+        messageDOM.className = 'message danger'
     }
 };
