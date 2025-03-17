@@ -31,6 +31,7 @@ body {
         #1845ad,
         #23a2f6
     );
+    box-shadow: 0 0 80pxrgba(24, 69, 173, 0.35);
     left: -80px;
     top: -80px;
 }
@@ -40,6 +41,7 @@ body {
         #ff512f,
         #f09819
     );
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.48);
     right: -80px;
     bottom: -80px;
 }
@@ -58,14 +60,7 @@ body {
     border: 1px solid #
 
 }
-.User-MG button {
-    border-radius: 10px;
-    font-size: 16px;
-    background-color: #f09819;
-    text-align: center;
-    margin-top: 10px;  
-    
-}
+
 .form-age{
     font-size: 16px;
     width: 25%; 
@@ -129,7 +124,7 @@ input.form,textarea {
     
 }
 .button  {
-   
+
     display: block;
     padding: 10px;
     font-size: 16px;
@@ -138,13 +133,24 @@ input.form,textarea {
     text-align: center;
     width: 50%;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 button:hover {
     background-color:#23a2f6;
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
 
 }
-
+.User-MG button {
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 5px;  
+    
+}
 .message {
     position: fixed;
     top: 10px;
