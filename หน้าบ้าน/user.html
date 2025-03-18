@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="user.css">
 </head>
 <body>
-    
+    <div id="message"></div>
     <h1>User Management Page</h1>
+    <div class="center">
     <table id="user-table">
         <thead>
             <tr>
@@ -19,21 +20,19 @@
                 <th>Last Name</th>
                 <th>Age</th>
                 <th>Gender</th>
-                <th>Interest</th>
-                <th>Description</th>
                 <th>Actions</th>
             </tr>
         </thead>
-        
         <tbody id="user"></tbody>
     </table>
+</div>
     <div class="position_center">
         <div class="button-back2register">
             <button type="button"id="register" onclick="window.location.href='index1.html';">Back to Register
             </button>
         
         </div>
-        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="user.js"></script>

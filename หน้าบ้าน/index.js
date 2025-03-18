@@ -50,7 +50,6 @@ window.onload = async () => {
         
     }
 }
-
 const validateData = (userData) => {
     let errors = [];
     if (!userData.firstName) {
@@ -124,6 +123,7 @@ const submitData = async () => {
         console.log('response', response.data);
         messageDOM.innerText = "บันทึกข้อมูลเรียบร้อย"
         messageDOM.className = "message success"
+
     } catch (error) {
         console.log('error message', error.message);
         console.log('error', error.errors);
@@ -145,6 +145,6 @@ const submitData = async () => {
         htmlData += '</div>';
 
         messageDOM.innerHTML = htmlData;
-        messageDOM.className = 'message danger'
+        messageDOM.className = 'message danger';
     }
-};
+}

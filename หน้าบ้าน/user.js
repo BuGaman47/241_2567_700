@@ -4,6 +4,19 @@ window.onload = async () => {
     await loadData();
 };
 
+// ✅ ฟังก์ชันแสดงข้อความแจ้งเตือนบนหน้าเว็บ (แยกออกมาให้ใช้ได้ทุกที่)
+const showMessage = (message, type = 'success') => {
+    const messageDOM = document.getElementById('message');
+    messageDOM.innerHTML = message;
+    messageDOM.style.color = type === 'success' ? 'green' : 'red';
+    messageDOM.style.fontWeight = 'bold';
+
+    // ✅ ซ่อนข้อความหลังจาก 3 วินาที
+    setTimeout(() => {
+        messageDOM.innerHTML = '';
+    }, 3000);
+};
+
 const loadData = async () => {
     console.log("user page loaded");
 
@@ -21,8 +34,6 @@ const loadData = async () => {
                     <td>${user.lastname}</td>
                     <td>${user.age}</td>
                     <td>${user.gender}</td>
-                    <td>${user.interests}</td>
-                    <td>${user.description}</td>
                     <td>
                         <a href="index1.html?id=${user.id}">
                             <button>Edit</button>
@@ -32,70 +43,28 @@ const loadData = async () => {
                 </tr>
             `;
         }
-        htmlData += '<div>'
         userDOM.innerHTML = htmlData;
 
-       //3. ลบ user
-    const deleteDOMs = document.getElementsByClassName('delete')
-    for (let i = 0; i < deleteDOMs.length; i++) {
-        deleteDOMs[i].addEventListener('click', async (event) => {
-            //ดึง id ของ user ที่ต้องการลบ
-            const id = event.target.dataset.id
-            try {
-                await axios.delete(`${BASE_URL}/users/${id}`)
-                loadData() //recursive function = เรียกใช้ฟังก์ชันตัวเอง
-            } catch (error) {
-                console.log('error', error);
-            }
-        })
-    }
+        // ✅ ลบ user พร้อมแจ้งเตือน
+        const deleteDOMs = document.getElementsByClassName('delete');
+        for (let i = 0; i < deleteDOMs.length; i++) {
+            deleteDOMs[i].addEventListener('click', async (event) => {
+                const id = event.target.dataset.id;
+                const confirmDelete = confirm(`คุณต้องการลบ User ID: ${id} ใช่หรือไม่?`);
+                if (!confirmDelete) return;
 
+                try {
+                    await axios.delete(`${BASE_URL}/users/${id}`);
+                    showMessage(`User ID: ${id} ถูกลบแล้ว`, 'success'); // ✅ แจ้งเตือน
+                    loadData(); // โหลดข้อมูลใหม่
+                } catch (error) {
+                    console.error('Error deleting user:', error);
+                    showMessage('เกิดข้อผิดพลาดในการลบข้อมูล', 'error'); // ✅ แจ้งเตือน error
+                }
+            });
+        }
     } catch (error) {
         console.error('Error loading users:', error);
+        showMessage('เกิดข้อผิดพลาดในการโหลดข้อมูล', 'error'); // ✅ แจ้งเตือน error
     }
 };
-
-/*
-const BASE_URL = 'http://localhost:8000';
-
-window.onload = async () => {
-    await loadData()
-}   
-
-const loadData = async () => {
-    console.log("user page loaded");
-    //1.load all user จาก api ที่เตรียมไว้
-    const respone = await axios.get(`${BASE_URL}/users`)
-    console.log(respone.data);
-
-    const userDOM = document.getElementById('user');
-    //2.นำ user ทั้งหมด load กลับเข้าไปใน html
-
-    let htmlData = '<div>'
-    for (let i = 0; i < respone.data.length; i++) {
-        let user = respone.data[i];
-        htmlData += `<div>
-        ${user.id} ${user.firstname} ${user.lastname}
-        <a href = 'index1.html?id=${user.id}'><button> Edit </button></a>
-        <button class = 'delete' data-id = '${user.id}'>Delete </button>
-        </div>`
-    }
-    htmlData += '<div>'
-    userDOM.innerHTML = htmlData;
-
-    //3. ลบ user
-    const deleteDOMs = document.getElementsByClassName('delete')
-    for (let i = 0; i < deleteDOMs.length; i++) {
-        deleteDOMs[i].addEventListener('click', async (event) => {
-            //ดึง id ของ user ที่ต้องการลบ
-            const id = event.target.dataset.id
-            try {
-                await axios.delete(`${BASE_URL}/users/${id}`)
-                loadData() //recursive function = เรียกใช้ฟังก์ชันตัวเอง
-            } catch (error) {
-                console.log('error', error);
-            }
-        })
-    }
-}
-    */
