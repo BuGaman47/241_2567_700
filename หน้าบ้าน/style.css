@@ -14,8 +14,7 @@ body {
     font-weight: bold;
         font-size: 46px;
         text-align: center;
-        margin-bottom: 30px;
-        
+        margin-bottom: 30px;    
     }
 .gender-form {
         font-size: 16px;
@@ -129,10 +128,10 @@ input.form,textarea {
     border-radius: 10px;
 }
 form {
-    height: 520px;
-    width: 400px;
-    background-color: rgba(255, 255, 255, 0.29);
-    position: absolute;
+    height: 520px; // ปรับความสูงของ form
+    width: 400px;// ปรับความกว้างของ form
+    background-color: rgba(255, 255, 255, 0.29);// ปรับสีพื้นหลังของ form
+    position: absolute; //
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;

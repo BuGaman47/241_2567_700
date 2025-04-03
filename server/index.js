@@ -97,34 +97,27 @@ app.get('/users/:id', async (req, res) => {
         })
     }
 
-})
- 
- 
+}) 
 //path: PUT /users/:id สำหรับแก้ไข users รายคน (ตาม id ที่บันทึกเข้าไป)
 app.put('/users/:id', async (req, res) => {
 
      try{
         let id = req.params.id;
         let updateUser = req.body;
-        const results = await conn.query(
-            'UPDATE users SET ? WHERE id = ?', 
-            [updateUser, id]    
+        const results = await conn.query('UPDATE users SET ? WHERE id = ?',[updateUser, id]    
         )
 
         res.json({
             message: 'Update user successfully',
             data: results[0]
         })
-
     }catch(error){
         console.error('error: ', error.message)
         res.status(500).json({
             message: 'something went wrong',
             errorMessage: error.message
         })
-    }
-   
-    
+    }  
 })
  
 //path: DELETE /users/:id สำหรับลบ users รายคน (ตาม id ที่บันทึกเข้าไป)

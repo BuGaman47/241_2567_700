@@ -1,10 +1,10 @@
-const BASE_URL = 'http://localhost:8000'
+const BASE_URL = 'http://localhost:8000' //เปลี่ยนเป็น url ของ server ที่เรา deploy
 let mode = 'CREATE' //default mode
-let selectedID = ''
+let selectedID = '' //default selectedID
 
-window.onload = async () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id')
+window.onload = async () => { //เมื่อเปิดหน้าเว็บ ให้ทำการโหลดข้อมูล
+    const urlParams = new URLSearchParams(window.location.search); //ดึงข้อมูลจาก url
+    const id = urlParams.get('id') //ดึง id จาก url
     console.log('id', id);
     if (id) {
         mode = 'EDIT'
@@ -12,9 +12,9 @@ window.onload = async () => {
 
         //1. ดึง user ที่ต้องการแก้ไข
          try {
-            const response = await axios.get(`${BASE_URL}/users/${id}`);
-            console.log('data', response.data);
-            const user = response.data;
+            const response = await axios.get(`${BASE_URL}/users/${id}`); //ดึงข้อมูลจาก server
+            console.log('data', response.data);//ดูข้อมูลที่ดึงมา
+            const user = response.data; //เก็บข้อมูล user ไว้ในตัวแปร user
             
             //2. นำข้อมูล user ที่ดึงมา ใส่ใน input ที่มี
 
@@ -76,6 +76,9 @@ const validateData = (userData) => {
 };
 
 const submitData = async () => {
+    let submitButton = document.getElementById('submitButton');
+    submitButton.style.display = "none"; // ซ่อนปุ่ม
+
      
     let firstNameDOM = document.querySelector("input[name=firstname]");
     let lastNameDOM = document.querySelector("input[name=lastname]");
@@ -103,48 +106,43 @@ const submitData = async () => {
         interests: interest
     }
 
-    console.log('submitData', userData);
+    console.log('submitData', userData); //ดูข้อมูลที่จะส่งไปบันทึก
 
         let message = 'บันทึกข้อมูลเรียบร้อย'
         if (mode == 'CREATE') {
             const response = await axios.post(`${BASE_URL}/users`, userData)
             console.log('response', response.data);
 
-        }else {
+        }else { 
+            if (!selectedID) {
+                alert('ไม่พบ ID ของผู้ใช้ กรุณารีเฟรชหน้าเว็บ');
+                return;
+            }
             const response = await axios.put(`${BASE_URL}/users/${selectedID}`, userData)
             message = 'แก้ไขข้อมูลเรียบร้อย'
             console.log('response', response.data);
         }
 
-        messageDOM.innerText = message
+        messageDOM.innerText = message //แสดงข้อความบันทึกสำเร็จ
         messageDOM.className = "message success"
-
-        const response = await axios.put(`${BASE_URL}/users`, userData)
-        console.log('response', response.data);
-        messageDOM.innerText = "บันทึกข้อมูลเรียบร้อย"
-        messageDOM.className = "message success"
-
     } catch (error) {
-        console.log('error message', error.message);
-        console.log('error', error.errors);
+        console.log('Error', error.errors);
 
         if (error.response) {
             console.log(error.response);
             error.message = error.response.data.message;
             error.errors = error.response.data.errors;
         }
-
-       
-        let htmlData = '<div>';
-        htmlData += `<div> ${error.message} </div>`
-        htmlData += '<ul>';
+           
+        let htmlData = `<div><div> ${error.message} </div><ul>`;
         for (let i = 0; i < error.errors.length; i++) {
             htmlData += `<li> ${error.errors[i]} </li>`
         }
-        htmlData += '</ul>';
-        htmlData += '</div>';
+        htmlData += '</ul></div>';
 
         messageDOM.innerHTML = htmlData;
         messageDOM.className = 'message danger';
+         // แสดงปุ่มกลับมา ถ้าส่งข้อมูลไม่สำเร็จ
+        submitButton.style.display = "block";
     }
 }

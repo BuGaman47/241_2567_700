@@ -1,9 +1,7 @@
 const BASE_URL = 'http://localhost:8000';
-
 window.onload = async () => {
-    await loadData();
+    await loadData();  
 };
-
 // ✅ ฟังก์ชันแสดงข้อความแจ้งเตือนบนหน้าเว็บ (แยกออกมาให้ใช้ได้ทุกที่)
 const showMessage = (message, type = 'success') => {
     const messageDOM = document.getElementById('message');
@@ -16,15 +14,12 @@ const showMessage = (message, type = 'success') => {
         messageDOM.innerHTML = '';
     }, 3000);
 };
-
 const loadData = async () => {
     console.log("user page loaded");
-
     try {
         const response = await axios.get(`${BASE_URL}/users`);
         const userDOM = document.getElementById('user');
         let htmlData = '';
-
         for (let i = 0; i < response.data.length; i++) {
             let user = response.data[i];
             htmlData += `
@@ -49,7 +44,7 @@ const loadData = async () => {
         const deleteDOMs = document.getElementsByClassName('delete');
         for (let i = 0; i < deleteDOMs.length; i++) {
             deleteDOMs[i].addEventListener('click', async (event) => {
-                const id = event.target.dataset.id;
+                const id = event.target.dataset.id; // ดึงค่า id จาก attribute data-id                                                                   
                 const confirmDelete = confirm(`คุณต้องการลบ User ID: ${id} ใช่หรือไม่?`);
                 if (!confirmDelete) return;
 

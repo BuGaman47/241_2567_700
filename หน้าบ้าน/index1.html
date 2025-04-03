@@ -1,96 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- กำหนดประเภทเอกสารและเวอร์ชันของ HTML -->
+<html lang="en"> <!-- กำหนดภาษาของเอกสารเป็นภาษาอังกฤษ -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register form</title>
-    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> <!-- กำหนดการเข้ารหัสตัวอักษรสำหรับเอกสาร -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ควบคุมการแสดงผลบนอุปกรณ์ต่างๆ -->
+    <title>Register form</title> <!-- ชื่อเรื่องของหน้าเว็บ -->
+    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet"> <!-- ลิงก์ไปยังไลบรารีไอคอน -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet"> <!-- ลิงก์ไปยังฟอนต์จาก Google Fonts -->
+    <link rel="stylesheet" href="style.css"> <!-- ลิงก์ไปยังไฟล์ CSS สำหรับจัดรูปแบบ -->
 </head>
 
 <body>
-    <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
+    <div class="background"> <!-- คอนเทนเนอร์สำหรับพื้นหลัง -->
+        <div class="shape"></div> <!-- องค์ประกอบรูปทรงตกแต่ง -->
+        <div class="shape"></div> <!-- องค์ประกอบรูปทรงตกแต่ง -->
     </div>
-    <div class="Gif"></div>
-    <form>
-    <div class="container">
-        <div class="header">
-            Register form
-        </div>
+    <div class="Gif"></div> <!-- พื้นที่สำหรับ GIF หรือแอนิเมชัน -->
+    <form> <!-- เริ่มต้นองค์ประกอบแบบฟอร์ม -->
+        <div class="container"> <!-- คอนเทนเนอร์หลักสำหรับเนื้อหาแบบฟอร์ม -->
+            <div class="header">
+                Register form <!-- ข้อความหัวแบบฟอร์ม -->
+            </div>
 
-        <div class="flex form-input">
-            <div class="header-form">Firstname</div>
-            <input class="form-name" name="firstname" type="text" placeholder="Enter firstname">
-        </div>
+            <div class="flex form-input"> <!-- คอนเทนเนอร์ flex สำหรับฟิลด์ข้อมูล -->
+                <div class="header-form">Firstname</div> <!-- ป้ายชื่อฟิลด์ชื่อ -->
+                <input class="form-name" name="firstname" type="text" placeholder="Enter firstname"> <!-- ฟิลด์ข้อมูลชื่อ -->
+            </div>
 
-        <div class="flex form-input">
-            <div class="header-form">Lastname</div>
-            <input class="form-name" name="lastname" type="text" placeholder=" Enter lastname">
-        </div>
+            <div class="flex form-input">
+                <div class="header-form">Lastname</div> <!-- ป้ายชื่อฟิลด์นามสกุล -->
+                <input class="form-name" name="lastname" type="text" placeholder=" Enter lastname"> <!-- ฟิลด์ข้อมูลนามสกุล -->
+            </div>
 
-        <div class="flex form-input">
-            <div class="header-form">Age</div>
-            <input class="form-age" name="age" type="number" min="0" max="100" >
-        </div>
-   
-        <div class="flex gender form-input">
-            <div class="gender-form">Gender</div>
-            <div>
+            <div class="flex form-input">
+                <div class="header-form">Age</div> <!-- ป้ายชื่อฟิลด์อายุ -->
+                <input class="form-age" name="age" type="number" min="0" max="100"> <!-- ฟิลด์ข้อมูลอายุ (ค่า 0-100) -->
+            </div>
 
+            <div class="flex gender form-input">
+                <div class="gender-form">Gender</div> <!-- ป้ายชื่อฟิลด์เลือกเพศ -->
                 <div>
-                    <input name="gender" type="radio" value="ชาย">Male 
+                    <div>
+                        <input name="gender" type="radio" value="ชาย">Male <!-- ตัวเลือกเพศชาย -->
+                    </div>
+                    <div>
+                        <input name="gender" type="radio" value="หญิง">female <!-- ตัวเลือกเพศหญิง -->
+                    </div>
+                    <div>
+                        <input name="gender" type="radio" value="ไม่ระบุ">Not Specified <!-- ตัวเลือกไม่ระบุเพศ -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-input">
+                Hobby <!-- ป้ายชื่อฟิลด์งานอดิเรก -->
+                <div>
+                    <input name="interest" type="checkbox" value="อ่านหนังสือ"> Read a book <!-- ตัวเลือกงานอดิเรก: อ่านหนังสือ -->
                 </div>
                 <div>
-                    <input name="gender" type="radio" value="หญิง">female
+                    <input name="interest" type="checkbox" value="ดูหนัง"> Watch a movie <!-- ตัวเลือกงานอดิเรก: ดูหนัง -->
                 </div>
                 <div>
-                    <input name="gender" type="radio" value="ไม่ระบุ">Not Specified
+                    <input name="interest" type="checkbox" value="ฟังเพลง"> Listen to music <!-- ตัวเลือกงานอดิเรก: ฟังเพลง -->
                 </div>
             </div>
-        </div>
 
-        <div class="form-input">
-            Hobby
-            <div>
-                <input name="interest" type="checkbox" value="อ่านหนังสือ"> Read a book
+            <div class="form-input">
+                Descriptions
+                <textarea name="description"></textarea> <!-- พื้นที่ข้อความสำหรับคำอธิบายเพิ่มเติม -->
             </div>
-            <div>
-                <input name="interest" type="checkbox" value="ดูหนัง"> Watch a movie
+
+            <div id = message class="message"></div> <!-- พื้นที่แสดงข้อความแจ้งเตือน -->
+
+            <div class="submitbutton">
+                <button id="submitButton" type="button" onclick="submitData()" class="button">Submit</button> 
             </div>
-            <div>
-                <input name="interest" type="checkbox" value="ฟังเพลง"> Listen to music
+
+            <div class="position_center">
+                <div class="User-MG">
+                    <button type="button"id="register" onclick="window.location.href='user.html';">
+                        User management 
+                        <i class="lni lni-user-4 register"></i> 
+                        <!-- ปุ่มเปลี่ยนไปหน้าจัดการผู้ใช้ พร้อมไอคอน -->
+                    </button>
+                </div>
             </div>
+
         </div>
-
-        <div class="form-input">
-            Descriptions
-            <textarea name="description"></textarea>
-        </div>
-
-        <div id = message class="message"></div>
-
-        <div class="submitbutton">
-        <button type="button" onclick="submitData()" class="button">Submit</button>
-        </div>
-
-        <div class="position_center">
-            
-            <div class="User-MG " >
-                <button type="button"id="register" onclick="window.location.href='user.html';">
-                    User management <i class="lni lni-user-4 register"></i> 
-                </button>
-
-            </div>
-        </div>
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <script src="index.js"></script>
-</form>
-</div>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script> <!-- ลิงก์ไลบรารี Axios สำหรับส่ง HTTP Request -->
+        <script src="index.js"></script> <!-- ลิงก์ไฟล์ JavaScript สำหรับลอจิกการทำงาน -->
+    </form>
 </body>
 </html>
